@@ -71,6 +71,10 @@ return {
 		if (deps.rows) this.el.innerHTML=deps.tpl(deps.rows)
     },
     events:{
+		'click button':function(e){
+            var f=e.target
+            this.signals.formChange(f.name, 'click').send()
+		},
         change:function(e){
             var f=e.target
             this.signals.formChange(f.name, getFieldValue(f)).send()

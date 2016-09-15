@@ -2,6 +2,11 @@
 <% for(var i=0,f; f=d[i]; i++){%>
 <div class="row">
 
+<% if (f.type === "button"){ %>
+<button type=button class="<%=f.className%>" name="<%=f.name%>"><%=f.label%></button>
+</div>
+<% continue}%>
+
 <% if (f.label){%><label for=<%=f.name%>><%=f.label%></label>
 <% } else if (f.icon){%><svg class="icon"><use xlink:href="#icon_<%=f.icon%>"/></svg><%}%>
 

@@ -44,7 +44,7 @@
   background: transparent;
   color: #FDFCFD;
 }
-#__ .form .submit{
+#__ .form button{
   position: relative;
   width: 100%;
   height: 4rem;
@@ -58,7 +58,7 @@
   -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
   transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
 }
-#__ .form .submit:after {
+#__ .form button:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -75,16 +75,16 @@
   transition: opacity 0.1s 0.4s;
   opacity: 0;
 }
-#__ .form .submit.processing {
+#__ .form button.processing {
   width: 4rem;
   font-size: 0;
 }
-#__ .form .submit.processing:after {
+#__ .form button.processing:after {
   opacity: 1;
   -webkit-animation: rotate 0.5s 0.4s infinite linear;
           animation: rotate 0.5s 0.4s infinite linear;
 }
-#__ .form .submit.success {
+#__ .form button.success {
   -webkit-transition: opacity 0.1s 0.3s, background-color 0.1s 0.3s, -webkit-transform 0.3s 0.1s ease-out;
   transition: opacity 0.1s 0.3s, background-color 0.1s 0.3s, -webkit-transform 0.3s 0.1s ease-out;
   transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s;
@@ -93,7 +93,7 @@
           transform: scale(30);
   opacity: 0.9;
 }
-#__ .form .submit.success:after {
+#__ .form button.success:after {
   -webkit-transition: opacity 0.1s 0s;
   transition: opacity 0.1s 0s;
   opacity: 0;
