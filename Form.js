@@ -27,7 +27,8 @@ getFieldValue=function(f){
     case 'select-one': return parseInt(f.value)
     case 'number':
     case 'range': return f.valueAsNumber
-    default: return f.value
+	case 'password': return f.value
+    default: return f.value.trim()
     }
 },
 setFieldValue=function(f,v,options){
