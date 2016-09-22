@@ -27,6 +27,7 @@ getFieldValue=function(f){
     case 'select-one': return parseInt(f.value)
     case 'number':
     case 'range': return f.valueAsNumber
+	case 'button': return undefined
 	case 'password': return f.value
     default: return f.value.trim()
     }
