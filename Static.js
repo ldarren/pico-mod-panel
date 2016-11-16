@@ -21,6 +21,7 @@ return {
 			m=models[d.model]
 			if (!m) continue
 			v=m.get(d.field)
+			if (!v) continue
 			v=d.value?v[d.value]:v
 			rows.push({type:'static', label:d.label, value:v})
 		}
