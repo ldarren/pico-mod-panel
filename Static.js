@@ -17,7 +17,7 @@ update=function(){
 		m=models[d.model]
 		if (!m) continue
 		v=m.get(d.field)
-		v=v && d.value?v.get(d.value):v
+		v=v && d.value?v[d.value]:v
 		rows.push({type:'static', label:d.label, value:v})
 	}
 	this.el.innerHTML=deps.tpl(rows)
