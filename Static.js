@@ -32,8 +32,9 @@ return {
 		fields:'list'
     },
     create: function(deps){
-		for(var i=0,ms=deps.models,m; m=ms[i]; i++){
-			this.listenTo(m,'change',update)
+		for(var i=0,ms=deps.models,ks=Object.keys(ms),m; m=ms[ks[i]]; i++){
+			this.listenTo(m,'update',update)
+			this.listenTo(m,'reset',update)
 		}
 
 		update.call(this)
