@@ -9,15 +9,21 @@ update=function(){
 	
 	var rows=[]
 
-	for(var i=0,d,m,v; d=fields[i]; i++){
+	for(var i=0,d,v; d=fields[i]; i++){
 		if (!d.model){
 			rows.push(d)
 			continue
 		}
-		m=models[d.model]
-		if (!m) continue
-		v=m.get(d.field)
-		v=v && d.value?v[d.value]:v
+		v=models[d.model]
+		if (!v) continue
+
+		for(var j=0,ps=d.props,pl=ps.length,p; j<pl; j++){
+			p=ps[j]
+			if (v.get) v=v.get(p)
+			else v=v[p]
+			if (!v) return console.error(p,'not found')
+		}
+
 		rows.push({type:'static', label:d.label, value:v})
 	}
 	this.el.innerHTML=deps.tpl(rows)
