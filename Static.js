@@ -21,7 +21,7 @@ update=function(){
 			p=ps[j]
 			if (v.get) v=v.get(p)
 			else v=v[p]
-			if (!v) return console.error(p,'not found')
+			if (!v) console.warn(p,'not found')
 		}
 
 		rows.push({type:'static', label:d.label, value:v})
